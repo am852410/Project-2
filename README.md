@@ -10,6 +10,10 @@ Craft Tacos & Beer United (Full Stack Application)
 
 Stretch Goal:  Users that wish to submit taco recipes must sign up/sign in: 
 
+Models (recipes.js) : An array of objects that contain recipes.
+
+Keys: The name of the recipe, name of the creator, and an image
+
 Main Page (index.ejs)
 
 Welcome to Craft Tacos and Beer United
@@ -71,6 +75,20 @@ Location:
 Email:
 
 Describe yourself in three words: 
+
+
+
+
+
+ROUTES
+
+GET "/recipes" allows users to look at an index of all the recipes available
+
+GET "/recipes/:id" allows users to look at recipe that they click at
+
+GET "/recipes/new" allows users to create their own recipe
+
+POST "/recipes" submits new recipe
 
 
 
