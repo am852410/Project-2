@@ -26,7 +26,7 @@ Picture of the Taco and Beer (Full Recipe) (show.ejs)
 
 When the user clicks, it will redirect them to the full entire recipe of the taco. 
 
-At the top, the type of taco, the name of the recipe creator, and the date it was submitted March 2021
+At the top, the type of taco, the name of the recipe creator, and the date it was submitted 
 
 A small description of the taco below the picture and the beer that was chosen to be paired with. 
 
@@ -42,9 +42,9 @@ Create New Recipe (new.ejs)
 
 Name of the taco: 
 
-Name of the chef(for stretch goal this will be the logged in users name): 
+Name of the recipe creator (for stretch goal this will be the logged in users name): 
 
-Date(stretch goal use moment.js to get current date automatically): Month/Year 
+Date (stretch goal use moment.js to get current date automatically): Month/Year 
 
 Picture of the finished taco and beer pairing (url):
 
@@ -75,8 +75,6 @@ Location:
 Email:
 
 Describe yourself in three words: 
-
-
 
 
 
