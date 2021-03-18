@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Craft Tacos and Beer United</title>
+  </head>
+  <body>
+
+   <h1>Welcome to Craft Tacos and Beer Unite</h1>
+   <div class="container" style="text-align:center;">
+     <table>
+       <% for (let i = 0; i < recipes.length; i++) { %>
+         <ul class="recipes">
+
+           <br>
+           <form action="/recipes/<%=i%>">
+             <input class="button" type="submit" value="<%= recipes[i].recipe_name %>" /> <br>
+           </form>
+         </ul>
+
+       </table>
+       <% } %>
+  </body>
+</html>
