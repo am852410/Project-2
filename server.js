@@ -9,6 +9,10 @@ app.get("/recipes", (req, res) => {
   });
 });
 
+app.get("/recipes/new", (req, res) => {
+  res.render("new.ejs", {});
+});
+
 app.get("/recipes/:id", (req, res) => {
   console.log({
     recipe: Recipe[req.params.id],
