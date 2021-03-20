@@ -13,6 +13,11 @@ app.get("/recipes/new", (req, res) => {
   res.render("new.ejs", {});
 });
 
+app.post("/recipes", (req, res) => {
+  Recipe.push(req.body);
+  res.redirect("/recipes");
+});
+
 app.get("/recipes/:id", (req, res) => {
   console.log({
     recipe: Recipe[req.params.id],
