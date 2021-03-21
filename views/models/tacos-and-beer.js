@@ -1,11 +1,12 @@
 module.exports = [
   {
-    recipe_name: "The San Diego Fish Taco",
+    name: "The San Diego Fish Taco",
+    creator: "Antonio Mendoza",
+    date: "March 2021",
     image: "",
-    date: "datetime",
     description:
       "This take on a fish taco is inspired by its origins in Baja California. Cooked with local Pacific Rockfish and beer battered to fry and crisp to perfection. Double tortilla coated with fresh guacamole and topped up with a tangy coleslaw makes this taco a perfect to enjoy with a crisp Buenaveza by Stone Brewing.",
-    time: "45 Minutes",
+    length: "45 Minutes",
     yield: "12 Tacos",
     equipment: ["Deep Fry Thermometer", "Tongs", "Fry Rack"],
     ingredients: [

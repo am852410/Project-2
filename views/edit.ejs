@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit Recipe</h1>
+    <% const action = `/recipes/${id}?_method=PUT` %>
+    <%- include('partials/recipe_form', {action: action, recipe: recipe, showValue: true}) %>
+    </body>
+</html>

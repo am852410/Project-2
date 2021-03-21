@@ -1,0 +1,25 @@
+<form action="<%= action %>" method="POST"> <br>
+  <input type="text" name="name" placeholder="Name Of Recipe" value="<%= showValue ? recipe.name : '' %>"> <br>
+  <br>
+  <input type="text" value="<%= showValue ? recipe.creator : '' %>" name="creator" placeholder="Recipe Creator"> <br>
+  <br>
+  <input type="date" value="<%= showValue ? recipe.date : '' %>" name="date" placeholder="Month XX/ Year XXXX"><br>
+  <br>
+  <input type="url" value="<%= showValue ? recipe.image : '' %>" name="image" placeholder="URL Image"><br>
+  <br>
+  <textarea name="description" rows="6" cols="75" placeholder="Description"><%= showValue ? recipe.description : '' %></textarea><br>
+  <br>
+  <input type="text" value="<%= showValue ? recipe.length : '' %>" name="length" placeholder="Length"><br>
+  <br>
+  <input type="text" value="<%= showValue ? recipe.yield : '' %>" name="yield" placeholder="Yield"><br>
+  <br>
+  <textarea name="equipment" rows="3" cols="50" placeholder="Equipment"><%=showValue ? recipe.equipment.join(", ") : '' %></textarea><br>
+  <br>
+  <textarea name="ingredients" rows="6" cols="75" placeholder="Ingredients"><%=showValue ? recipe.ingredients.join(", ") : '' %></textarea><br>
+  <br>
+  <textarea name="preparation" rows="6" cols="75" placeholder="Preparation"><%=showValue ? recipe.preparation.join(", ") : '' %></textarea><br>
+  <br>
+  <input type="text" value="<%= showValue ? recipe.beer : '' %>" name="beer" placeholder="Beer"><br>
+  <br>
+  <input class="button" type="submit" value="Submit"><br>
+</form>

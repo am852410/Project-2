@@ -6,7 +6,7 @@
     <title>Craft Tacos and Beer United</title>
   </head>
   <body>
-
+    <%- include('partials/header') %>
    <h1>Welcome to Craft Tacos and Beer United</h1>
    <div class="container" style="text-align:center;">
      <table>
@@ -15,15 +15,21 @@
 
            <br>
            <form action="/recipes/<%=i%>">
-             <input class="button" type="submit" value="<%= recipes[i].recipe_name %>" /> <br>
+
+             <input class="button" type="submit" value="<%= recipes[i].name %>" /> <br>
            </form>
          </ul>
 
        </table>
-
+       <form action="/recipes/<%= i %>?_method=DELETE" method="POST">
+          <input class="delete-button" type="submit" value="Delete" />
+        </form>
+        <a href="/recipes/<%= i %>/edit">Edit Recipe</a>
+        <% } %>
+      </div>
        <form action="/recipes/new">
-        <input class="create-button" type="submit" value="Create New Recipe" />
-      </form>
-       <% } %>
+        <input class="create-button" type="submit" value="Create A New Recipe" />
+        </form>
+      <%- include('partials/footer') %>
   </body>
 </html>

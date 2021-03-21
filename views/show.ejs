@@ -6,9 +6,9 @@
     <title></title>
   </head>
   <body>
-
+    <%- include('partials/header') %>
     <div class="container-two">
-      <h1><%= recipe.recipe_name %></h1>
+      <h1><%= recipe.name %></h1>
       <br>
 
       <h2><%= recipe.date %></h2>
@@ -33,6 +33,10 @@
 
 
     </div>
-
+    <form action="/recipes/<%= id %>?_method=DELETE" method="POST">
+      <a href="/recipes/<%= id %>/edit">Edit Recipes</a>
+      <input class="delete-button" type="submit" value="Delete" />
+    </form>
+    <%- include('partials/footer') %>
   </body>
 </html>
