@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/am852410/Project-2#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "method-override": "^3.0.0"
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.1"
   }
 }
