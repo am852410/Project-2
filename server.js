@@ -8,6 +8,8 @@ const methodOverride = require("method-override");
 // this will parse the data and create the "req.body" object
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
+
+// Body Parser
 app.use(express.urlencoded({ extended: true }));
 
 // req.body = {
@@ -22,7 +24,7 @@ const mongoURI = process.env.MONGODBURI;
 
 const db = mongoose.connection;
 
-const Recipe = require("./views/models/tacos-and-beer.js");
+const Recipe = require("./views/models/recipe.js");
 
 mongoose.connect(
   mongoURI,
@@ -46,30 +48,11 @@ db.on("disconnected", () => {
   console.log("mongo disconnected");
 });
 
-// Set up Database ==========
-
-const UserModel = require("./views/models/users");
-
-app.get("/", (req, res) => {
-  // User.create({
-  //   username: req.body.username,
-  //   password: req.body.password
-  // });
-
-  UserModel.find({}, (err, foundUser) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(foundUser);
-    }
-  });
-
-  //res.send("mongo/mongoose review");
-});
-
 app.get("/recipes", (req, res) => {
-  res.render("index.ejs", {
-    recipes: Recipe
+  Recipe.find({}, (error, allRecipes) => {
+    res.render("index.ejs", {
+      recipes: allRecipes
+    });
   });
 });
 
@@ -84,44 +67,64 @@ app.post("/recipes", (req, res) => {
   body.equipment = req.body.equipment.split(", ");
   body.ingredients = req.body.ingredients.split(", ");
   body.preparation = req.body.preparation.split(", ");
-  Recipe.push(body);
+
+  Recipe.create(body, (error, createdRecipe) => {
+    if (error) {
+      console.log(error);
+      res.send(error);
+    } else {
+      res.send(createdRecipe);
+    }
+  });
+  // Recipe.push(body);
   res.redirect("/recipes");
 });
 
 app.get("/recipes/:id", (req, res) => {
-  res.render("show.ejs", {
-    recipe: Recipe[req.params.id],
-    id: req.params.id
+  // recipe: Recipe[req.params.id],
+  // id: req.params.id
+  console.log("req.params.id", req.params.id);
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    console.log(foundRecipe);
+    res.render("show.ejs", {
+      recipe: foundRecipe
+      // res.send(foundRecipe)
+    });
   });
 });
 
 app.delete("/recipes/:id", (req, res) => {
   console.log("trying to delete");
-  Recipe.splice(req.params.id, 1);
-  res.redirect("/recipes");
+  Recipe.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/recipes");
+  });
+  //Recipe.splice(req.params.id, 1);
 });
 
 app.get("/recipes/:id/edit", (req, res) => {
-  res.render("edit.ejs", {
-    recipe: Recipe[req.params.id],
-    id: req.params.id
+  // res.render("edit.ejs", {
+  //   recipe: Recipe[req.params.id],
+  //   id: req.params.id
+  Recipe.findById(req.params.id, (err, foundRecipe) => {
+    console.log(foundRecipe);
+    res.render("edit.ejs", {
+      recipe: foundRecipe
+      // res.send(foundRecipe)
+    });
   });
 });
 
 app.put("/recipes/:id", (req, res) => {
   console.log(req);
-  Recipe[req.params.id].name = req.body.name;
-  Recipe[req.params.id].creator = req.body.creator;
-  Recipe[req.params.id].date = req.body.date;
-  Recipe[req.params.id].image = req.body.image;
-  Recipe[req.params.id].description = req.body.description;
-  Recipe[req.params.id].length = req.body.length;
-  Recipe[req.params.id].yield = req.body.yield;
-  Recipe[req.params.id].equipment = req.body.equipment.split(", ");
-  Recipe[req.params.id].ingredients = req.body.ingredients.split(", ");
-  Recipe[req.params.id].preparation = req.body.preparation.split(", ");
-  Recipe[req.params.id].beer = req.body.beer;
-  res.redirect("/recipes");
+
+  req.body.equipment = req.body.equipment.split(", ");
+  req.body.ingredients = req.body.ingredients.split(", ");
+  req.body.preparation = req.body.preparation.split(", ");
+
+  Recipe.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
+    return res.redirect("/recipes");
+    //res.send(updatedModel);
+  });
 });
 
 app.listen(PORT, () => {

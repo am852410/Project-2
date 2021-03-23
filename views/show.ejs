@@ -35,8 +35,8 @@
 
 
     </div>
-    <form action="/recipes/<%= id %>?_method=DELETE" method="POST">
-      <a href="/recipes/<%= id %>/edit">Edit Recipes</a>
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+      <a href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
       <input class="delete-button" type="submit" value="Delete" />
     </form>
     <%- include('partials/footer') %>

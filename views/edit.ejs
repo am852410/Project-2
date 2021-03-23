@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Edit Recipe</h1>
-    <% const action = `/recipes/${id}?_method=PUT` %>
+    <% const action = `/recipes/${recipe._id}?_method=PUT` %>
     <%- include('partials/recipe_form', {action: action, recipe: recipe, showValue: true}) %>
     </body>
 </html>

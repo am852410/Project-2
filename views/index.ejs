@@ -8,23 +8,23 @@
   <body>
     <%- include('partials/header') %>
    <h1>Welcome to Craft Tacos and Beer United</h1>
-   <div class="container" style="text-align:center;">
+   <div class="container" style="text-align:center">
      <table>
        <% for (let i = 0; i < recipes.length; i++) { %>
          <ul class="recipes">
 
            <br>
-           <form action="/recipes/<%=i%>">
+           <form action="/recipes/<%=recipes[i]._id%>">
 
              <input class="button" type="submit" value="<%= recipes[i].name %>" /> <br>
            </form>
          </ul>
 
        </table>
-       <form action="/recipes/<%= i %>?_method=DELETE" method="POST">
+       <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
           <input class="delete-button" type="submit" value="Delete" />
         </form>
-        <a href="/recipes/<%= i %>/edit">Edit Recipe</a>
+        <a href="/recipes/<%= recipes[i]._id %>/edit">Edit Recipe</a>
         <% } %>
       </div>
        <form action="/recipes/new">
