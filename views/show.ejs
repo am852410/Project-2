@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/app.css">
-    <title></title>
-  </head>
+<head>
+  <%- include('partials/head') %>
+</head>
   <body>
     <%- include('partials/header') %>
     <div class="container-two">
@@ -16,6 +14,8 @@
       <h2><%= recipe.date %></h2>
 
       <br>
+
+      <h2><%= recipe.image %></h2>
 
       <p><%= recipe.description %></p>
 
@@ -35,10 +35,12 @@
 
 
     </div>
+    <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">TEST Edit Recipes</a>
     <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-      <a href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
+      <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
       <input class="delete-button" type="submit" value="Delete" />
     </form>
     <%- include('partials/footer') %>
+
   </body>
 </html>

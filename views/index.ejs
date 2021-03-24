@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/app.css">
-    <title>Craft Tacos and Beer United</title>
-  </head>
+<head>
+  <%- include('partials/head') %>
+</head>
   <body>
     <%- include('partials/header') %>
    <h1>Welcome to Craft Tacos and Beer United</h1>
    <div class="container" style="text-align:center">
      <table>
        <% for (let i = 0; i < recipes.length; i++) { %>
+         <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <img src="<%= recipes[i].image %>">
+                  <span class="card-title"><%= recipes[i].name %></span>
+                  <div class="row col s2 offset-s8">
+                    <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
+                      <button class="btn-floating waves-effect waves-light red " value=""><i class="material-icons">remove_circle_outline</i></button>
+                    </form>
+                    <a href="/recipes/<%= recipes[i]._id %>/edit" class="btn-floating waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+              </div>
+            </div>
+          </div>
          <ul class="recipes">
 
            <br>
            <form action="/recipes/<%=recipes[i]._id%>">
-
              <input class="button" type="submit" value="<%= recipes[i].name %>" /> <br>
            </form>
          </ul>
 
        </table>
-       <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
+       <!-- <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
           <input class="delete-button" type="submit" value="Delete" />
-        </form>
-        <a href="/recipes/<%= recipes[i]._id %>/edit">Edit Recipe</a>
+        </form> -->
+        <!-- <a class="waves-effect waves-light btn" href="/recipes/<%= recipes[i]._id %>/edit">Edit Recipe</a> -->
         <% } %>
       </div>
-       <form action="/recipes/new">
-        <input class="create-button" type="submit" value="Create A New Recipe" />
-        </form>
       <%- include('partials/footer') %>
+
   </body>
 </html>

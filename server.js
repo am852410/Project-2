@@ -115,15 +115,19 @@ app.get("/recipes/:id/edit", (req, res) => {
 });
 
 app.put("/recipes/:id", (req, res) => {
-  console.log(req);
+  console.log(req.body);
+  console.log(req.params.id);
+  console.log("type of", typeof req.body.image);
 
   req.body.equipment = req.body.equipment.split(", ");
   req.body.ingredients = req.body.ingredients.split(", ");
   req.body.preparation = req.body.preparation.split(", ");
-
+  console.log("req 2", req.body);
   Recipe.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
+    console.log("updated model", updatedModel);
+    console.log("err", err);
     return res.redirect("/recipes");
-    //res.send(updatedModel);
+    res.send(updatedModel);
   });
 });
 
