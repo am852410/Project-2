@@ -71,9 +71,10 @@ app.post("/recipes", (req, res) => {
   Recipe.create(body, (error, createdRecipe) => {
     if (error) {
       console.log(error);
-      res.send(error);
+      //res.send(error);
     } else {
-      res.send(createdRecipe);
+      console.log(createdRecipe);
+      //res.send(createdRecipe);
     }
   });
   // Recipe.push(body);
