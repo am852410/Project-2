@@ -7,19 +7,19 @@
     <%- include('partials/header') %>
    <h1>Welcome to Craft Tacos and Beer United</h1>
    <div class="container" style="text-align:center">
-     <table>
+
        <% for (let i = 0; i < recipes.length; i++) { %>
          <div class="row">
             <div class="col s12 m6">
-              <div class="card">
+              <div class="card large">
                 <div class="card-image">
                   <img src="<%= recipes[i].image %>">
                   <span class="card-title"><%= recipes[i].name %></span>
-                  <div class="row col s2 offset-s8">
-                    <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
-                      <button class="btn-floating waves-effect waves-light red " value=""><i class="material-icons">remove_circle_outline</i></button>
+                  <div class="row ">
+                    <a href="/recipes/<%= recipes[i]._id %>/edit" class="btn-floating waves-effect waves-light btn halfway-fab"><i class="material-icons">mode_edit</i></a>
+                    <form class ="btn-floating waves-effect waves-light red halfway-fab" action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST" style="border: 1px solid red;">
+                      <button class="btn-floating waves-effect waves-light red halfway-fab" value=""><i class="material-icons">remove_circle_outline</i></button>
                     </form>
-                    <a href="/recipes/<%= recipes[i]._id %>/edit" class="btn-floating waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a>
                   </div>
                 </div>
                 <div class="card-content">
@@ -36,7 +36,7 @@
            </form>
          </ul>
 
-       </table>
+
        <!-- <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">
           <input class="delete-button" type="submit" value="Delete" />
         </form> -->

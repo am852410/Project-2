@@ -1,6 +1,12 @@
 {
   "name": "project-2",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.3.0"
+  },
   "description": "Craft Tacos & Beer United (Full Stack Application)",
   "main": "server.js",
   "scripts": {
