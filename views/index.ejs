@@ -9,32 +9,21 @@
    <div class="container" style="text-align:center">
 
        <% for (let i = 0; i < recipes.length; i++) { %>
-         <div class="row">
-            <div class="col s12 m6">
-              <div class="card large">
-                <div class="card-image">
+          <div class="row" >
+            <div class="col s12 m6 card-wrapper" onclick="location.href='/recipes/<%=recipes[i]._id%>'">
+              <div class="card">
+                <div class="card-image img-wrapper">
                   <img src="<%= recipes[i].image %>">
-                  <span class="card-title"><%= recipes[i].name %></span>
-                  <div class="row ">
-                    <a href="/recipes/<%= recipes[i]._id %>/edit" class="btn-floating waves-effect waves-light btn halfway-fab"><i class="material-icons">mode_edit</i></a>
-                    <form class ="btn-floating waves-effect waves-light red halfway-fab" action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST" style="border: 1px solid red;">
-                      <button class="btn-floating waves-effect waves-light red halfway-fab" value=""><i class="material-icons">remove_circle_outline</i></button>
-                    </form>
-                  </div>
+                  <a href="/recipes/<%= recipes[i]._id %>/edit" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
                 </div>
                 <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                  <span class="card-title"><%= recipes[i].name %></span>
+                  <p><%= recipes[i].description %></p>
                 </div>
               </div>
             </div>
           </div>
-         <ul class="recipes">
 
-           <br>
-           <form action="/recipes/<%=recipes[i]._id%>">
-             <input class="button" type="submit" value="<%= recipes[i].name %>" /> <br>
-           </form>
-         </ul>
 
 
        <!-- <form action="/recipes/<%= recipes[i]._id %>?_method=DELETE" method="POST">

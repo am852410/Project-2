@@ -5,3 +5,13 @@ body {
 h1 {
   text-align: center;
 }
+
+img {
+  max-height: 400px;
+  width: auto;
+  object-fit: cover;
+}
+
+.card-wrapper:hover {
+  background-color: yellow;
+}
