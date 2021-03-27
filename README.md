@@ -2,11 +2,11 @@
 
 Craft Tacos & Beer United (Full Stack Application)
 
-* Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
+* # Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
 
-* General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
+* # General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
 
-* Who would use it: Taco and craft beer lovers, amateur chefs, people looking for taco recipes, good beers to pair with tacos.
+* # Who would use it: Taco and craft beer lovers, amateur chefs, people looking for taco recipes, good beers to pair with tacos.
 
 Stretch Goal:  Users that wish to submit taco recipes must sign up/sign in: 
 
