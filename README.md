@@ -18,13 +18,21 @@
 
 Stretch Goal:  Users that wish to submit taco recipes must sign up/sign in: 
 
-Models (recipes.js) : An array of objects that contain recipes.
+* MVC
 
-Keys: The name of the recipe, name of the creator, and an image
+Models 
 
-Main Page (index.ejs)
+(recipes.js, tacos-and-beer.js, users.js)
 
-Welcome to Craft Tacos and Beer United
+Views
+
+Main Page (index.ejs), (show.ejs), (new.ejs), (edit.ejs)
+
+Controllers
+
+(server.js)
+
+# Welcome to Craft Tacos and Beer United
 
 This blog was made to invite people from all over to post their taco recipes paired with their choice of craft beer. Below, you will find our latest taco recipe submissions. 
 
