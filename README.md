@@ -2,25 +2,25 @@
 
 # Craft Tacos & Beer United (Full Stack Application)
 
-[index-wireframe] (https://wireframe.cc/BaR9A5)
+[index-wireframe](https://wireframe.cc/BaR9A5)
 
-[show-page] (https://wireframe.cc/kXJDTi)
+[show-page](https://wireframe.cc/kXJDTi)
 
-[create-page] (https://wireframe.cc/uvzJXe)
+[create-page](https://wireframe.cc/uvzJXe)
 
-[link-to-app] (https://craft-tacos-and-beer-united.herokuapp.com/recipes)
+[link-to-app](https://craft-tacos-and-beer-united.herokuapp.com/recipes)
 
-* Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
+- Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place.
 
-* General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
+- General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
 
-* Who would use it: Taco and craft beer lovers, amateur chefs, people looking for taco recipes, good beers to pair with tacos.
+- Who would use it: Taco and craft beer lovers, amateur chefs, people looking for taco recipes, good beers to pair with tacos.
 
-Stretch Goal:  Users that wish to submit taco recipes must sign up/sign in: 
+Stretch Goal: Users that wish to submit taco recipes must sign up/sign in:
 
-* MVC
+- MVC
 
-Models 
+Models
 
 (recipes.js, tacos-and-beer.js, users.js)
 
@@ -34,21 +34,21 @@ Controllers
 
 # Welcome to Craft Tacos and Beer United
 
-This blog was made to invite people from all over to post their taco recipes paired with their choice of craft beer. Below, you will find our latest taco recipe submissions. 
+This blog was made to invite people from all over to post their taco recipes paired with their choice of craft beer. Below, you will find our latest taco recipe submissions.
 
-* CSS format 
+- CSS format
 
 Picture of the Taco and Beer (Full Recipe) (show.ejs)
 
-When the user clicks, it will redirect them to the full entire recipe of the taco. 
+When the user clicks, it will redirect them to the full entire recipe of the taco.
 
-At the top, the type of taco, the name of the recipe creator, and the date it was submitted 
+At the top, the type of taco, the name of the recipe creator, and the date it was submitted
 
-A small description of the taco below the picture and the beer that was chosen to be paired with. 
+A small description of the taco below the picture and the beer that was chosen to be paired with.
 
-YIELD: 
+YIELD:
 
-INGREDIENTS: 
+INGREDIENTS:
 
 PREPARATION:
 
@@ -56,43 +56,39 @@ LEAVE REVIEW:
 
 Create New Recipe (new.ejs)
 
-Name of the taco: 
+Name of the taco:
 
-Name of the recipe creator (for stretch goal this will be the logged in users name): 
+Name of the recipe creator (for stretch goal this will be the logged in users name):
 
-Date (stretch goal use moment.js to get current date automatically): Month/Year 
+Date (stretch goal use moment.js to get current date automatically): Month/Year
 
 Picture of the finished taco and beer pairing (url):
 
-Beer Pairing: 
+Beer Pairing:
 
-Small description of the taco and beer chosen to be paired: 
+Small description of the taco and beer chosen to be paired:
 
-Yield: 
+Yield:
 
-Ingredients: 
+Ingredients:
 
-Preparation: 
-
-
+Preparation:
 
 Make a profile - Stretch Goal
 
 Username:
 
-Password: 
+Password:
 
-Profile Pic: 
+Profile Pic:
 
-Name: 
+Name:
 
-Location: 
+Location:
 
 Email:
 
-Describe yourself in three words: 
-
-
+Describe yourself in three words:
 
 ROUTES
 
@@ -109,7 +105,3 @@ GET "/recipes/:id/edit" allows user to make edits to their recipes
 PUT "/recipes/:id" allows user to update their recipes
 
 DELETE "/recipes/:id" allows users to delete recipes
-
-
-
-
