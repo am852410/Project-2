@@ -1,6 +1,14 @@
 # Project-2
 
-Craft Tacos & Beer United (Full Stack Application)
+# Craft Tacos & Beer United (Full Stack Application)
+
+[index-wireframe] (https://wireframe.cc/BaR9A5)
+
+[show-page] (https://wireframe.cc/kXJDTi)
+
+[create-page] (https://wireframe.cc/uvzJXe)
+
+[link-to-app] (https://craft-tacos-and-beer-united.herokuapp.com/recipes)
 
 * Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
 
@@ -10,13 +18,21 @@ Craft Tacos & Beer United (Full Stack Application)
 
 Stretch Goal:  Users that wish to submit taco recipes must sign up/sign in: 
 
-Models (recipes.js) : An array of objects that contain recipes.
+* MVC
 
-Keys: The name of the recipe, name of the creator, and an image
+Models 
 
-Main Page (index.ejs)
+(recipes.js, tacos-and-beer.js, users.js)
 
-Welcome to Craft Tacos and Beer United
+Views
+
+Main Page (index.ejs), (show.ejs), (new.ejs), (edit.ejs)
+
+Controllers
+
+(server.js)
+
+# Welcome to Craft Tacos and Beer United
 
 This blog was made to invite people from all over to post their taco recipes paired with their choice of craft beer. Below, you will find our latest taco recipe submissions. 
 
@@ -87,6 +103,12 @@ GET "/recipes/:id" allows users to look at recipe that they click at
 GET "/recipes/new" allows users to create their own recipe
 
 POST "/recipes" submits new recipe
+
+GET "/recipes/:id/edit" allows user to make edits to their recipes
+
+PUT "/recipes/:id" allows user to update their recipes
+
+DELETE "/recipes/:id" allows users to delete recipes
 
 
 
