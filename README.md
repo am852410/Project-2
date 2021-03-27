@@ -8,6 +8,8 @@
 
 [create-page] (https://wireframe.cc/uvzJXe)
 
+[link-to-app] (https://craft-tacos-and-beer-united.herokuapp.com/recipes)
+
 * Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
 
 * General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
