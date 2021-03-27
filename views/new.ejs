@@ -5,12 +5,14 @@
 </head>
   <body>
     <%- include('partials/header') %>
-    <section>  
-    <h1>Create A New Recipe</h1>
-    </section>
-    <%- include('partials/recipe_form', {action: "/recipes", showValue: false}) %>
+    <div class="screen-wrapper">
+      <section>
+      <h1>Create A New Recipe</h1>
+      </section>
+      <%- include('partials/recipe_form', {action: "/recipes", showValue: false}) %>
 
-    <br>
+      <br>
+    </div>
     <%- include('partials/footer') %>
 
   </body>
