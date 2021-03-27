@@ -73,3 +73,15 @@ section {
 nav {
   background-color: teal;
 }
+
+.logo {
+  height: 300px;
+  width: auto;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
