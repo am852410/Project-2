@@ -31,7 +31,7 @@
 
         <h4>SPECIAL EQUIPMENT</h4>
 
-        <h5><%= recipe.equipment.join(", ") %></h5>
+        <p><%= recipe.equipment.join(", ") %></p>
 
         <h4>INGREDIENTS</h4>
 
@@ -58,13 +58,14 @@
 
     </div>
 
-    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-      <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
-      <button class="btn waves-effect waves-light red" type="submit" name="action">Delete
-        <i class="material-icons right">delete</i>
-      </button>
-    </form>
+    <div class="button-wrapper">
+      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Delete
+          <i class="material-icons right">delete</i>
+        </button>
+      </form>
+    </div>
     <%- include('partials/footer') %>
-
   </body>
 </html>

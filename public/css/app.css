@@ -1,5 +1,5 @@
 body {
-  background-color: #f4f5f5;
+  background-color: black;
   min-height: 100vh;
 }
 
@@ -59,4 +59,17 @@ section {
 
 .screen-wrapper {
   padding: 0 50px;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px;
+  margin-top: 0;
+}
+
+nav {
+  background-color: teal;
 }
