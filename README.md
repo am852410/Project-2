@@ -2,6 +2,12 @@
 
 Craft Tacos & Beer United (Full Stack Application)
 
+[index-wireframe] (https://wireframe.cc/BaR9A5)
+
+[show-page] (https://wireframe.cc/kXJDTi)
+
+[create-page] (https://wireframe.cc/uvzJXe)
+
 * Problem: I would like a source where I can search for taco recipes and paired with craft beer all in one place. 
 
 * General App Idea/Purpose: Create a blog where people can showcase their taco recipes and craft beer pairing where the recipes are organized in one place.
@@ -90,7 +96,7 @@ POST "/recipes" submits new recipe
 
 GET "/recipes/:id/edit" allows user to make edits to their recipes
 
-PUT "/recipes/:id" 
+PUT "/recipes/:id" allows user to update their recipes
 
 DELETE "/recipes/:id" allows users to delete recipes
 
