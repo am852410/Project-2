@@ -1,6 +1,6 @@
 # Project-2
 
-Craft Tacos & Beer United (Full Stack Application)
+# Craft Tacos & Beer United (Full Stack Application)
 
 [index-wireframe] (https://wireframe.cc/BaR9A5)
 
