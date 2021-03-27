@@ -13,12 +13,13 @@ h1 {
   object-fit: cover;
 }
 
-.card-wrapper:hover {
-  background-color: yellow;
-}
-
 .container {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 section {
@@ -49,4 +50,9 @@ section {
 
 .recipe-form {
   padding: 50px;
+}
+
+.card-container {
+  max-width: 500px;
+  margin: 50px;
 }
