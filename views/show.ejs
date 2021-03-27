@@ -10,7 +10,7 @@
 
         <h1><%= recipe.name %></h1>
 
-        <h2><%= recipe.creator %></h2>
+        <h2><%= "By:" + " " + recipe.creator %></h2>
 
 
         <h2><%= recipe.date %></h2>
@@ -18,32 +18,51 @@
       </section>
 
 
-      <img src="<%= recipe.image %>" />
+      <img class="show-image" src="<%= recipe.image %>" />
 
       <section>
-        <p><%= recipe.description %></p>
+        <h4><%= recipe.description %></h4>
       </section>
       <section>
 
-        <h2><%= recipe.length %></h2>
+        <h5><%= "Length:" + " " + recipe.length %></h5>
 
-        <h2><%= recipe.yield %></h2>
+        <h5><%= "Yield:" + " " + recipe.yield %></h5>
 
-        <h2><%= recipe.equipment %></h2>
+        <h4>SPECIAL EQUIPMENT</h4>
 
-        <p><%= recipe.ingredients %></p>
+        <h5><%= recipe.equipment.join(", ") %></h5>
 
-        <p><%= recipe.preparation %></p>
+        <h4>INGREDIENTS</h4>
 
-        <h2><%= recipe.beer %></h2>
+        <ul>
+          <% recipe.ingredients.map((ing)=> { %>
+            <li> <%= ing %> </li>
+          <% }) %>
+        </ul>
+
+        <h4>PREPARATION</h4>
+
+        <ol>
+          <% recipe.preparation.map((prep)=> { %>
+            <li> <%= prep %> </li>
+          <% }) %>
+        </ol>
+
+
+        <h4>CRAFT BEER OF CHOICE</h4>
+
+        <h5><%= recipe.beer %></h5>
       </section>
 
 
     </div>
-    <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">TEST Edit Recipes</a>
+
     <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
       <a class="waves-effect waves-light btn" href="/recipes/<%= recipe._id %>/edit">Edit Recipes</a>
-      <input class="delete-button" type="submit" value="Delete" />
+      <button class="btn waves-effect waves-light red" type="submit" name="action">Delete
+        <i class="material-icons right">delete</i>
+      </button>
     </form>
     <%- include('partials/footer') %>
 

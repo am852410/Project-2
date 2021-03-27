@@ -1,25 +1,88 @@
-<form action="<%= action %>" method="POST"> <br>
-  <input type="text" name="name" placeholder="Name Of Recipe" value="<%= showValue ? recipe.name : '' %>"> <br>
-  <br>
-  <input type="text" value="<%= showValue ? recipe.creator : '' %>" name="creator" placeholder="Recipe Creator"> <br>
-  <br>
-  <input type="date" value="<%= showValue ? recipe.date : '' %>" name="date" placeholder="Month XX/ Year XXXX"><br>
-  <br>
-  <input type="url" value="<%= showValue ? recipe.image : '' %>" name="image" placeholder="URL Image"><br>
-  <br>
-  <textarea name="description" rows="6" cols="75" placeholder="Description"><%= showValue ? recipe.description : '' %></textarea><br>
-  <br>
-  <input type="text" value="<%= showValue ? recipe.length : '' %>" name="length" placeholder="Length"><br>
-  <br>
-  <input type="text" value="<%= showValue ? recipe.yield : '' %>" name="yield" placeholder="Yield"><br>
-  <br>
-  <textarea name="equipment" rows="3" cols="50" placeholder="Equipment"><%=showValue ? recipe.equipment.join(", ") : '' %></textarea><br>
-  <br>
-  <textarea name="ingredients" rows="6" cols="75" placeholder="Ingredients"><%=showValue ? recipe.ingredients.join(", ") : '' %></textarea><br>
-  <br>
-  <textarea name="preparation" rows="6" cols="75" placeholder="Preparation"><%=showValue ? recipe.preparation.join(", ") : '' %></textarea><br>
-  <br>
-  <input type="text" value="<%= showValue ? recipe.beer : '' %>" name="beer" placeholder="Beer"><br>
-  <br>
-  <input class="button" type="submit" value="Submit"><br>
+
+<form class="col s12 recipe-form " action="<%= action %>" method="POST">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="name" value="<%= showValue ? recipe.name : '' %>">
+      <label for="name">Name</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" value="<%= showValue ? recipe.creator : '' %>" name="creator"Creator">
+      <label for="creator">Creator</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="date" value="<%= showValue ? recipe.date : '' %>" name="date">
+      <label for="date">Date</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="url" value="<%= showValue ? recipe.image : '' %>" name="image"Image">
+      <label for="image">Image</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" name="description" rows="6" cols="75"><%= showValue ? recipe.description : '' %></textarea>
+      <label for="description">Description</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" value="<%= showValue ? recipe.length : '' %>" name="length">
+      <label for="length">Length</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" value="<%= showValue ? recipe.yield : '' %>" name="yield">
+      <label for="yield">Yield</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" name="equipment" rows="3" cols="50"><%=showValue ? recipe.equipment.join(", ") : '' %></textarea>
+      <label for="equipment">Equipment</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" name="ingredients" rows="6" cols="75"><%=showValue ? recipe.ingredients.join(", ") : '' %></textarea>
+      <label for="ingredients">Ingredients</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea class="materialize-textarea" name="preparation" rows="6" cols="75"><%=showValue ? recipe.preparation.join(", ") : '' %></textarea>
+      <label for="preparation">Preparation</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" value="<%= showValue ? recipe.beer : '' %>" name="beer">
+      <label for="beer">Beer</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
 </form>
