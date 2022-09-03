@@ -84,4 +84,12 @@ nav {
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 600px) {
+  .brand-logo {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
 }
